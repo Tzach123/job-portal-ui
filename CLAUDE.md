@@ -43,3 +43,40 @@ Three roles with route protection via `ProtectedRoute` component:
 ### ESLint
 
 Flat config (`eslint.config.js`). The `no-unused-vars` rule ignores variables starting with uppercase or underscore (`varsIgnorePattern: '^[A-Z_]'`).
+
+## Git
+
+### Branch Naming
+
+- `feature/<short-description>` — new features
+- `fix/<short-description>` — bug fixes
+- `chore/<short-description>` — maintenance, deps, config
+
+### Commit Messages
+
+- Imperative mood, present tense: "Add auth guard", not "Added auth guard"
+- Subject line ≤ 72 characters, no trailing period
+- No conventional-commit prefixes (keep it consistent with existing history)
+
+### Bug Fix Workflow
+
+When you resolve a bug, always:
+
+1. Pull the latest `main` and checkout a new `fix/<short-description>` branch
+2. Commit the fix on that branch
+3. Push and open a PR against `main` with `gh pr create`
+
+Never commit a bug fix directly to `main`.
+
+### PR Workflow
+
+- Never push directly to `main` — always use a branch + PR
+- PR title: imperative mood, ≤ 70 characters
+- PR body: what changed, why, and a short test plan
+- One logical change per PR
+
+### General Rules
+
+- Never force-push `main`
+- Always pull the latest `main` before branching
+- Delete the remote branch after a PR is merged
